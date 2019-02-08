@@ -16,7 +16,8 @@ def loadFrames(directory, n):
         (grabbed, frame) = capture.read()
         if grabbed and count < n:
             #frame = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY),                    (64, 32))
-            frame = cv2.resize(frame, (64, 32), interpolation=cv2.INTER_LANCZOS4)
+            frame = cv2.resize(frame, (32, 16), interpolation=cv2.INTER_LANCZOS4)
+            #frame = cv2.resize(frame, None, fx=0.1, fy=0.1, interpolation=cv2.INTER_LANCZOS4)
             frames.append(frame)
             count += 1
         else:
